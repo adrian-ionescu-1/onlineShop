@@ -1,0 +1,43 @@
+.card-item {
+  width: 30%;
+  margin: 16px;
+}
+
+.image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.page-view {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.div-controls {
+  display: flex;
+}
+
+.btn-buy {
+  margin-left: auto;
+}
+
+.div-admin-controls {
+  display: grid;
+}
+
+.p-title {
+  font-size: 20px;
+  color: black;
+  font-weight: bold;
+  margin-top: 16px;
+}
+
+.p-description {
+  font-size: 14px;
+  font-style: italic;
+}
+
+.p-price {
+  font-weight: bold;
+}

@@ -1,0 +1,19 @@
+<div class="page-view">
+  <mat-card *ngFor="let item of items" class="card-item">
+    <img [src]="item.imageUrl" class="image"/>
+    <mat-card-content>
+
+      <p class="p-title">{{ item.title }} </p>
+      <p class="p-description">Description: {{ item.description }}</p>
+      <p>Price:<span class="p-price">{{ item.price }} RON</span></p>
+      <div *ngIf="isAdmin" class="div-admin-controls">
+        <button mat-raised-button color="primary" class="btn-action" (click)="onEdit(item)">Edit</button>
+        <div style="height: 16px"></div>
+        <button mat-raised-button color="accent" class="btn-action" (click)="onDelete(item)">Delete</button>
+      </div>
+      <div *ngIf="!isAdmin" class="div-controls">
+        <button mat-raised-button color="primary" class="btn-buy" (click)="onBuy(item)">Buy</button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

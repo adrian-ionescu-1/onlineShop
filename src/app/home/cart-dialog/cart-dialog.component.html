@@ -1,0 +1,30 @@
+<h2 mat-dialog-title>All items from cart</h2>
+<mat-dialog-content class="mat-typography">
+  <div class="div-row">
+    <mat-card *ngFor="let item of items" class="item-card">
+      <mat-card-content>
+        <div style="display: flex">
+          <img [src]="item.imageUrl" class="img-preview"/>
+
+          <div>
+            <p class="lbl-title-details">Title: {{ item.title }}</p>
+            <p class="lbl-description-details ">Description: {{ item.description }}</p>
+          </div>
+          <div class="div-spacer"></div>
+          <div style="display: contents">
+            <p class="lbl-price">{{ item.price }} RON</p>
+          </div>
+          <div class="div-buttons">
+            <button mat-icon-button color="primary" (click)="onDeleteCart(item)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Close</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial (click)="onBuy()">Buy</button>
+</mat-dialog-actions>

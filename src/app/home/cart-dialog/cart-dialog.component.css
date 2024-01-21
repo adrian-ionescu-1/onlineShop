@@ -1,0 +1,61 @@
+.item-card {
+  background-color: white;
+  display: flex; /* unnecesary, only the container needs to be flex */
+  /* unless this is another flex container */
+  flex-direction: column; /* also unnecesary unless it's for purposes not shown in the example */
+  width: 70vw;
+  margin: 10px;
+}
+
+.lbl-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.div-buttons {
+  display: flex;
+  margin-left: auto;
+}
+
+.div-spacer {
+  width: 16px;
+  height: 16px;
+}
+
+.div-row {
+  display: flex;
+  flex: 1; /* unnecesary */
+  flex-wrap: wrap;
+}
+
+.img-preview {
+  height: 60px;
+  border-radius: 10px;
+}
+
+.lbl-title-details {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 6px;
+  margin-left: 16px;
+}
+
+.lbl-description-details {
+  font-size: 14px;
+  margin-bottom: 6px;
+  margin-left: 16px;
+}
+
+.lbl-price {
+  font-weight: bold;
+  font-size: 24px;
+  margin-left: 36px;
+  margin-right: 16px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.div-spacer {
+  flex: 1 1 auto;
+}

@@ -1,0 +1,46 @@
+<mat-drawer-container class="drawer-container" autosize>
+  <mat-drawer #drawer class="drawer-sidenav" mode="side">
+
+    <div class="div-logo">
+      <img class="img-logo"
+           src="https://img.freepik.com/premium-vector/colorful-bird-illustration-gradient-abstract_343694-1740.jpg"/>
+    </div>
+    <mat-card class="card-menu-button">
+      <mat-card-content>
+        <p>Adrian</p>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="card-menu-button" (click)="onHome()">
+      <mat-card-content>
+        <p>Home</p>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="card-menu-button" (click)="onLogOut()">
+      <mat-card-content>
+        <p>Logout</p>
+      </mat-card-content>
+    </mat-card>
+  </mat-drawer>
+
+  <div class="drawer-sidenav-content">
+    <mat-toolbar color="primary">
+      <button mat-icon-button class="example-icon" (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>My App</span>
+      <span class="example-spacer"></span>
+      <button mat-icon-button class="example-icon favorite-icon">
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <button mat-icon-button class="example-icon">
+        <mat-icon>share</mat-icon>
+      </button>
+    </mat-toolbar>
+
+    <!--[item] reprezinta @Input("item") din componenta de add-edit-item-->
+    <app-add-edit-item [item]="itemData"></app-add-edit-item>
+    <!--(changeData) reprezinta @Output din componenta de list-items-->
+    <app-list-items (changeData)="onChangeItem($event)" [isAdmin]="true"></app-list-items>
+  </div>
+
+</mat-drawer-container>

@@ -1,0 +1,43 @@
+<mat-card class="card-container">
+  <mat-card-content>
+    <div class="input-container">
+      <mat-form-field class="input-field">
+        <mat-label>Title</mat-label>
+        <input matInput placeholder="iPhone" [formControl]="title" required>
+        @if (title.invalid) {
+          <mat-error>{{ getErrorMessage(title) }}</mat-error>
+        }
+      </mat-form-field>
+    </div>
+    <div class="input-container">
+      <mat-form-field class="input-field">
+        <mat-label>Description</mat-label>
+        <input matInput placeholder="128GB color:Black" [formControl]="description" required>
+        @if (description.invalid) {
+          <mat-error>{{ getErrorMessage(description) }}</mat-error>
+        }
+      </mat-form-field>
+    </div>
+    <div class="input-container">
+      <mat-form-field class="input-field">
+        <mat-label>Price</mat-label>
+        <input matInput placeholder="99.99 EUR" [formControl]="price" required>
+        @if (price.invalid) {
+          <mat-error>{{ getErrorMessage(price) }}</mat-error>
+        }
+      </mat-form-field>
+    </div>
+    <div class="input-container">
+      <mat-form-field class="input-field">
+        <mat-label>Image</mat-label>
+        <input matInput placeholder="Image URL" [formControl]="imageUrl" required>
+        @if (imageUrl.invalid) {
+          <mat-error>{{ getErrorMessage(imageUrl) }}</mat-error>
+        }
+      </mat-form-field>
+    </div>
+    <div class="div-buttons-container">
+      <button mat-raised-button color="primary" class="btn-save" (click)="onSave()">Save</button>
+    </div>
+  </mat-card-content>
+</mat-card>
