@@ -7,6 +7,9 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {Router} from "@angular/router";
+import {AddEditUserComponent} from "./add-edit-user/add-edit-user.component";
+import {ListUsersComponent} from "./list-users/list-users.component";
+import {ListOrdersComponent} from "./list-orders/list-orders.component";
 
 @Component({
   selector: 'app-dashboard',
@@ -18,13 +21,17 @@ import {Router} from "@angular/router";
     MatCardModule,
     MatIconModule,
     MatSidenavModule,
-    MatToolbarModule
+    MatToolbarModule,
+    AddEditUserComponent,
+    ListUsersComponent,
+    ListOrdersComponent
   ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent {
   itemData: any;
+  userData: any;
 
   constructor(private router: Router) {
 
@@ -35,6 +42,12 @@ export class DashboardComponent {
     console.log(item);
     //salvam itemul primit in componenta de dashboard
     this.itemData = item;
+  }
+
+  onChangeUser(user:any) {
+    console.log("Userul a ajuns in dashboard");
+    console.log(user);
+    this.userData = user;
   }
 
   onHome() {

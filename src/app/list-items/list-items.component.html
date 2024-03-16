@@ -1,9 +1,9 @@
 <div class="page-view">
   <mat-card *ngFor="let item of items" class="card-item">
-    <img [src]="item.imageUrl" class="image"/>
+    <img [src]="item.image" class="image"/>
     <mat-card-content>
 
-      <p class="p-title">{{ item.title }} </p>
+      <p class="p-title">{{ item.name }} </p>
       <p class="p-description">Description: {{ item.description }}</p>
       <p>Price:<span class="p-price">{{ item.price }} RON</span></p>
       <div *ngIf="isAdmin" class="div-admin-controls">

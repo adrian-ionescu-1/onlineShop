@@ -1,0 +1,65 @@
+<mat-card class="card-container">
+  <mat-card-content>
+    <div class="input-container">
+      <mat-form-field class="input-field">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="John Smith" [formControl]="name" required>
+        @if (name.invalid) {
+          <mat-error>{{ getErrorMessage(name) }}</mat-error>
+        }
+      </mat-form-field>
+    </div>
+    <div class="input-container">
+      <mat-form-field class="input-field">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="youremail@email.com" [formControl]="email" required>
+        @if (email.invalid) {
+          <mat-error>{{ getErrorMessage(email) }}</mat-error>
+        }
+      </mat-form-field>
+    </div>
+    <div class="input-container">
+      <mat-form-field class="input-field">
+        <mat-label>Address</mat-label>
+        <input matInput placeholder="Street" [formControl]="address" required>
+        @if (address.invalid) {
+          <mat-error>{{ getErrorMessage(address) }}</mat-error>
+        }
+      </mat-form-field>
+    </div>
+    <div class="input-container">
+      <mat-form-field class="input-field">
+        <mat-label>Phone</mat-label>
+        <input matInput placeholder="07342234522" [formControl]="phone" required>
+        @if (phone.invalid) {
+          <mat-error>{{ getErrorMessage(phone) }}</mat-error>
+        }
+      </mat-form-field>
+    </div>
+    <div class="input-container">
+      <mat-form-field class="input-field">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" [formControl]="password" required>
+        @if (password.invalid) {
+          <mat-error>{{ getErrorMessage(password) }}</mat-error>
+        }
+      </mat-form-field>
+    </div>
+    <div class="input-container">
+      <mat-form-field class="input-field">
+        <mat-label>User role</mat-label>
+        <mat-select [formControl]="userRole">
+          <mat-option value="CUSTOMER">Customer</mat-option>
+          <mat-option value="ADMIN">Admin</mat-option>
+        </mat-select>
+        @if (userRole.invalid) {
+          <mat-error>{{ getErrorMessage(userRole) }}</mat-error>
+        }
+      </mat-form-field>
+    </div>
+
+    <div class="div-buttons-container">
+      <button mat-raised-button color="primary" class="btn-save" (click)="onSave()">Save</button>
+    </div>
+  </mat-card-content>
+</mat-card>

@@ -7,6 +7,8 @@ import {MatCardModule} from "@angular/material/card";
 import {Router} from "@angular/router";
 import {ListItemsComponent} from "../list-items/list-items.component";
 import {CartButtonComponent} from "./cart-button/cart-button.component";
+import {UserService} from "../services/user.service";
+import {NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-home',
@@ -18,15 +20,25 @@ import {CartButtonComponent} from "./cart-button/cart-button.component";
     MatIconModule,
     MatCardModule,
     ListItemsComponent,
-    CartButtonComponent
+    CartButtonComponent,
+    NgIf
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private userService: UserService) {
 
+  }
+
+  isUserAdmin() {
+    if (this.userService.getLoggedUser() != null && this.userService.getLoggedUser().userRole == "ADMIN") {
+
+      return true;
+    }
+
+    return false;
   }
 
   onDashboard() {

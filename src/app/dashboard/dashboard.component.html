@@ -37,6 +37,10 @@
       </button>
     </mat-toolbar>
 
+    <app-list-orders></app-list-orders>
+    <app-add-edit-user [user]="userData"></app-add-edit-user>
+    <app-list-users (changeUserData)="onChangeUser($event)"></app-list-users>
+
     <!--[item] reprezinta @Input("item") din componenta de add-edit-item-->
     <app-add-edit-item [item]="itemData"></app-add-edit-item>
     <!--(changeData) reprezinta @Output din componenta de list-items-->
