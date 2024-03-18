@@ -32,5 +32,6 @@ export class ListUsersComponent {
   }
 
   onDelete(user:any) {
+    this.userService.deleteUser(user);
   }
 }

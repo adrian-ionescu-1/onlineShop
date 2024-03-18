@@ -25,3 +25,7 @@
   height: 200px;
   margin: auto;
 }
+
+.example-spacer {
+  flex: 1 1 auto;
+}
